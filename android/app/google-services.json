@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "635682651081",
+    "project_id": "brandy-3fb6a",
+    "storage_bucket": "brandy-3fb6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635682651081:android:cc7e2452de555f2e5d8618",
+        "android_client_info": {
+          "package_name": "com.example.brandie_assessment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "635682651081-4km09r962gusqledf80f24s4ksplq4g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAu16PX-MPS_Y982JcLIGOkcxI3tuGU0o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "635682651081-4km09r962gusqledf80f24s4ksplq4g5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
