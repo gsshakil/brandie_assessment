@@ -1,4 +1,4 @@
-import 'package:brandie_assessment/apps/product/product_model.dart';
+import 'package:brandie_assessment/apps/product/model/product_model.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 
 class FirebaseDynamicLinkService {
@@ -31,9 +31,8 @@ class FirebaseDynamicLinkService {
       (dynamicLinkData) {
         var path = dynamicLinkData.link.pathSegments;
         var isProudct = path.contains('product');
-        print('deeplink has product $isProudct');
         if (isProudct) {
-          String id = dynamicLinkData.link.queryParameters['id']!;
+          //do routing
         }
       },
     );

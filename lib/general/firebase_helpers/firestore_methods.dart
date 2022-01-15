@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:brandie_assessment/apps/review/review_model.dart';
-import 'package:brandie_assessment/general/utils/storage_methods.dart';
+import 'package:brandie_assessment/general/firebase_helpers/storage_methods.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uuid/uuid.dart';
 

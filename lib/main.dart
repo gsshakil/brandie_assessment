@@ -1,9 +1,8 @@
 import 'package:brandie_assessment/apps/authentication/authentication_provider.dart';
 import 'package:brandie_assessment/apps/core/landing_provider.dart';
 import 'package:brandie_assessment/apps/core/splash_screen.dart';
-import 'package:brandie_assessment/apps/favourites/favourite_provider.dart';
-import 'package:brandie_assessment/apps/product/get_product_provider.dart';
-import 'package:brandie_assessment/apps/product/product_provider.dart';
+import 'package:brandie_assessment/apps/product/providers/get_product_provider.dart';
+import 'package:brandie_assessment/apps/review/add_review_provider.dart';
 import 'package:brandie_assessment/general/routes/route_generator.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
         ChangeNotifierProvider(create: (_) => GetProductProvider()),
         ChangeNotifierProvider(create: (_) => LandingProvider()),
-        ChangeNotifierProvider(create: (_) => FavouriteProvider()),
+        ChangeNotifierProvider(create: (_) => AddReviewProvider()),
       ],
       child: MaterialApp(
         title: 'Brandy',

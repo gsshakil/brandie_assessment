@@ -1,4 +1,4 @@
-import 'package:brandie_assessment/apps/product/get_product_provider.dart';
+import 'package:brandie_assessment/apps/product/providers/get_product_provider.dart';
 import 'package:brandie_assessment/apps/product/product_card.dart';
 import 'package:brandie_assessment/apps/product/product_model.dart';
 import 'package:flutter/material.dart';

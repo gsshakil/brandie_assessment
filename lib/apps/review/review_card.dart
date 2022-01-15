@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ReviewCard extends StatelessWidget {
   const ReviewCard({this.snap, Key? key}) : super(key: key);
 
+  // ignore: prefer_typing_uninitialized_variables
   final snap;
 
   @override
