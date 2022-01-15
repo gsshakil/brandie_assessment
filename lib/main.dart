@@ -39,12 +39,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => GetProductProvider()),
         ChangeNotifierProvider(create: (_) => LandingProvider()),
         ChangeNotifierProvider(create: (_) => FavouriteProvider()),
-        ChangeNotifierProvider(create: (_) => ProductProvider()),
       ],
       child: MaterialApp(
         title: 'Brandy',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.amber,
         ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: RouterGenerator.generateRoute,

@@ -24,7 +24,7 @@ class ProductList extends StatelessWidget {
           itemBuilder: (context, index) {
             var item = product.getResponseData()[index]['node'];
             return ProductCard(
-              item: ProductModel(
+              product: ProductModel(
                 id: item['id'],
                 name: item['name'],
                 description: item['description'],

@@ -5,19 +5,21 @@ import 'package:provider/provider.dart';
 class ProductProvider extends ChangeNotifier {
   bool isFavourite = false;
 
-  toggleFavourite() {
-    isFavourite = !isFavourite;
+  ProductProvider(context, id) {
+    var favIds = Provider.of<FavouriteProvider>(context, listen: false)
+        .favourites
+        .map((e) => e.id)
+        .toList();
+
+    if (favIds.contains(id)) {
+      isFavourite = true;
+    }
+
     notifyListeners();
   }
 
-  ProductProvider() {
-    // var favIds = Provider.of<FavouriteProvider>(context, listen: false)
-    //     .favourites
-    //     .map((e) => e.id)
-    //     .toList();
-
-    // if (favIds.contains(id)) {
-    //   isFavourite = true;
-    // }
+  toggleFavourite() {
+    isFavourite = !isFavourite;
+    notifyListeners();
   }
 }

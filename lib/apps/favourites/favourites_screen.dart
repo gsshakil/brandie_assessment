@@ -1,6 +1,7 @@
 import 'package:brandie_assessment/apps/favourites/favourite_provider.dart';
 import 'package:brandie_assessment/apps/product/product_card.dart';
 import 'package:brandie_assessment/apps/product/product_model.dart';
+import 'package:brandie_assessment/apps/product/product_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +20,7 @@ class FavouritesScreen extends StatelessWidget {
                 onPressed: () {
                   favourite.removeAll();
                 },
-                icon: Icon(Icons.close),
+                icon: const Icon(Icons.close),
               ),
             ],
           ),
@@ -33,7 +34,7 @@ class FavouritesScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     var item = favourite.favourites[index];
                     return ProductCard(
-                      item: ProductModel(
+                      product: ProductModel(
                         id: item.id,
                         name: item.name,
                         description: item.description,

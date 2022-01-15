@@ -6,15 +6,8 @@ import 'package:flutter/material.dart';
 
 class FavouriteProvider extends ChangeNotifier {
   List<ProductModel> favourites = [];
-  bool isFavourite = false;
-
-  toggleFavourite() {
-    isFavourite = !isFavourite;
-    notifyListeners();
-  }
 
   void add(ProductModel product) async {
-    toggleFavourite();
     favourites.add(product);
     notifyListeners();
     await SharedPrefs.saveproduct(jsonEncode(favourites));
@@ -23,12 +16,13 @@ class FavouriteProvider extends ChangeNotifier {
 
   void addAll(List<ProductModel> products) {
     favourites.addAll(products);
+    notifyListeners();
   }
 
   void remove(ProductModel removeItem) async {
-    toggleFavourite();
     favourites =
         favourites.where((product) => product.id != removeItem.id).toList();
+    notifyListeners();
     await SharedPrefs.saveproduct(jsonEncode(favourites));
     print(favourites);
   }

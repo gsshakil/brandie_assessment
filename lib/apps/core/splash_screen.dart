@@ -19,22 +19,28 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  Widget build(BuildContext context) {
-    fetchData() async {
-      var productDataFromPrefs = await SharedPrefs.getproduct();
-      if (productDataFromPrefs != null) {
-        var productData = jsonDecode(productDataFromPrefs) as List<dynamic>;
-        print('Fasv Data $productData');
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    fetchData();
+  }
 
-        List<ProductModel> parsedproductData = productData
-            .map((product) => ProductModel.fromJson(product))
-            .toList();
+  fetchData() async {
+    var productDataFromPrefs = await SharedPrefs.getproduct();
+    if (productDataFromPrefs != null) {
+      var productData = jsonDecode(productDataFromPrefs) as List<dynamic>;
+      print('Fasv Data $productData');
 
-        Provider.of<FavouriteProvider>(context, listen: false)
-            .addAll(parsedproductData);
-      }
+      List<ProductModel> parsedproductData =
+          productData.map((product) => ProductModel.fromJson(product)).toList();
+
+      Provider.of<FavouriteProvider>(context, listen: false)
+          .addAll(parsedproductData);
     }
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return FutureBuilder(
       future: Future.delayed(const Duration(milliseconds: 1000)),
       builder: (context, snapshot) {
@@ -44,7 +50,6 @@ class _SplashScreenState extends State<SplashScreen> {
         return StreamBuilder(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
-            fetchData();
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Splash();
             } else if (snapshot.hasData) {
