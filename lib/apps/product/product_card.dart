@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ProductCard extends StatelessWidget {
-  ProductCard({
+  const ProductCard({
     Key? key,
     required this.product,
   }) : super(key: key);
@@ -61,41 +61,41 @@ class ProductCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Consumer<FavouriteProvider>(
-                      builder: (context, favouriteProvider, child) {
-                        return Positioned(
-                          right: 10,
-                          child: IconButton(
-                            onPressed: () {
-                              productProvider.toggleFavourite();
+                    // Consumer<FavouriteProvider>(
+                    //   builder: (context, favouriteProvider, child) {
+                    //     return Positioned(
+                    //       right: 10,
+                    //       child: IconButton(
+                    //         onPressed: () {
+                    //           productProvider.toggleFavourite();
 
-                              !productProvider.isFavourite
-                                  ? favouriteProvider.remove(
-                                      ProductModel(
-                                        id: product.id,
-                                        name: product.name,
-                                        imageUrl: product.imageUrl,
-                                        description: product.description,
-                                      ),
-                                    )
-                                  : favouriteProvider.add(
-                                      ProductModel(
-                                        id: product.id,
-                                        name: product.name,
-                                        imageUrl: product.imageUrl,
-                                        description: product.description,
-                                      ),
-                                    );
-                            },
-                            icon: Icon(
-                              productProvider.isFavourite
-                                  ? Icons.favorite_rounded
-                                  : Icons.favorite_outline_outlined,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
+                    //           !productProvider.isFavourite
+                    //               ? favouriteProvider.remove(
+                    //                   ProductModel(
+                    //                     id: product.id,
+                    //                     name: product.name,
+                    //                     imageUrl: product.imageUrl,
+                    //                     description: product.description,
+                    //                   ),
+                    //                 )
+                    //               : favouriteProvider.add(
+                    //                   ProductModel(
+                    //                     id: product.id,
+                    //                     name: product.name,
+                    //                     imageUrl: product.imageUrl,
+                    //                     description: product.description,
+                    //                   ),
+                    //                 );
+                    //         },
+                    //         icon: Icon(
+                    //           productProvider.isFavourite
+                    //               ? Icons.favorite_rounded
+                    //               : Icons.favorite_outline_outlined,
+                    //         ),
+                    //       ),
+                    //     );
+                    //   },
+                    // ),
                   ],
                 ),
               ),

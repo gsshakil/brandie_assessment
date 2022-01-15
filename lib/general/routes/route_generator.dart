@@ -22,7 +22,12 @@ class RouterGenerator {
         );
 
       case RouteConstants.addReviewRoute:
-        return MaterialPageRoute(builder: (context) => const AddReviewScreen());
+        var args = settings.arguments as AddReviewScreen;
+        return MaterialPageRoute(
+          builder: (context) => AddReviewScreen(
+            productId: args.productId,
+          ),
+        );
 
       default:
         return _errorRoute();

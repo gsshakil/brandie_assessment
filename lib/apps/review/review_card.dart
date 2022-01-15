@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ReviewCard extends StatelessWidget {
-  const ReviewCard({Key? key}) : super(key: key);
+  const ReviewCard({this.snap, Key? key}) : super(key: key);
+
+  final snap;
 
   @override
   Widget build(BuildContext context) {
@@ -9,24 +11,24 @@ class ReviewCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Heading...Profile Picture+ Name, Title, Time, More Button
-
             Row(
               children: [
                 //Profile Pic and Name
                 CircleAvatar(
                   radius: 20,
-                  backgroundImage: NetworkImage('url'),
+                  backgroundImage: NetworkImage(snap['profImage']),
                 ),
                 const SizedBox(width: 20),
-                Text('Name Goes Here'),
+                Text(snap['username'].toString()),
                 Expanded(
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.more_vert),
+                      icon: const Icon(Icons.more_vert),
                     ),
                   ),
                 ),
@@ -35,22 +37,21 @@ class ReviewCard extends StatelessWidget {
             const SizedBox(height: 10),
 
             //Content Text
-            Text('Contexkjdfg' * 10),
+            Text(snap['description']),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
 
             //Images
-            Container(
+            SizedBox(
               height: 200,
               width: MediaQuery.of(context).size.width,
               child: Image.network(
-                'src',
+                snap['postUrl'].toString(),
                 fit: BoxFit.cover,
                 errorBuilder: (c, e, s) {
-                  return Center(
+                  return const Center(
                     child: Icon(Icons.error),
                   );
-                  
                 },
               ),
             )

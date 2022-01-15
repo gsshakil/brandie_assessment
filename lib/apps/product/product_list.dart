@@ -4,19 +4,35 @@ import 'package:brandie_assessment/apps/product/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ProductList extends StatelessWidget {
+class ProductList extends StatefulWidget {
   const ProductList({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<ProductList> createState() => _ProductListState();
+}
+
+class _ProductListState extends State<ProductList> {
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<GetProductProvider>(context, listen: false).getProducts(true);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Consumer<GetProductProvider>(
       builder: (context, product, child) {
-        product.getProducts(true);
         if (product.getResponseData().isEmpty) {
-          const Center(child: CircularProgressIndicator());
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * 0.5,
+            child: const Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
         }
+
         return ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),

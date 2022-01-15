@@ -8,7 +8,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class AddReviewScreen extends StatefulWidget {
-  const AddReviewScreen({Key? key}) : super(key: key);
+  const AddReviewScreen({required this.productId, Key? key}) : super(key: key);
+
+  final String productId;
 
   @override
   State<AddReviewScreen> createState() => _AddReviewScreenState();
@@ -32,6 +34,7 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
       });
       try {
         String res = await FireStoreMethods().uploadPost(
+          widget.productId,
           _descriptionController.text,
           _file!,
           user.uid,
@@ -72,6 +75,7 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
     setState(() {
       _file = null;
     });
+    Navigator.of(context).pop();
   }
 
   void showImagePickerBottomSheet(context) {
@@ -200,7 +204,7 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 40),
+          // const SizedBox(height: 40),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Form(
@@ -208,26 +212,26 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  RatingBar(
-                    initialRating: 1,
-                    minRating: 1,
-                    itemSize: 24,
-                    direction: Axis.horizontal,
-                    allowHalfRating: false,
-                    itemCount: 5,
-                    glowColor: Theme.of(context).primaryColor,
-                    ratingWidget: RatingWidget(
-                      full: const Icon(Icons.star),
-                      half: const Icon(Icons.star_border),
-                      empty: const Icon(Icons.star_outline),
-                    ),
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 5.0),
-                    onRatingUpdate: (rate) {
-                      setState(() {
-                        rating = rate;
-                      });
-                    },
-                  ),
+                  // RatingBar(
+                  //   initialRating: 1,
+                  //   minRating: 1,
+                  //   itemSize: 24,
+                  //   direction: Axis.horizontal,
+                  //   allowHalfRating: false,
+                  //   itemCount: 5,
+                  //   glowColor: Theme.of(context).primaryColor,
+                  //   ratingWidget: RatingWidget(
+                  //     full: const Icon(Icons.star),
+                  //     half: const Icon(Icons.star_border),
+                  //     empty: const Icon(Icons.star_outline),
+                  //   ),
+                  //   itemPadding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  //   onRatingUpdate: (rate) {
+                  //     setState(() {
+                  //       rating = rate;
+                  //     });
+                  //   },
+                  // ),
                   const SizedBox(height: 40),
                   TextFormField(
                     controller: _descriptionController,

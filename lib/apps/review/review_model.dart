@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Review {
+  final String productId;
   final String description;
   final String uid;
   final String username;
@@ -10,6 +11,7 @@ class Review {
   final String profImage;
 
   const Review({
+    required this.productId,
     required this.description,
     required this.uid,
     required this.username,
@@ -23,6 +25,7 @@ class Review {
     var snapshot = snap.data() as Map<String, dynamic>;
 
     return Review(
+        productId: snapshot["productId"],
         description: snapshot["description"],
         uid: snapshot["uid"],
         postId: snapshot["postId"],

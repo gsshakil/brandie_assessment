@@ -5,6 +5,7 @@ import 'package:brandie_assessment/apps/core/landing_screen.dart';
 import 'package:brandie_assessment/apps/core/splash.dart';
 import 'package:brandie_assessment/apps/favourites/favourite_provider.dart';
 import 'package:brandie_assessment/apps/product/product_model.dart';
+import 'package:brandie_assessment/general/utils/firebase_dynamic_link_service.dart';
 import 'package:brandie_assessment/general/utils/shared_prefs.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +21,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     fetchData();
+    FirebaseDynamicLinkService.initDynamicLink(context);
   }
 
   fetchData() async {

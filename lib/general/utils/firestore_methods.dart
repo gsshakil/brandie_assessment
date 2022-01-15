@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:brandie_assessment/apps/review/post_model.dart';
+import 'package:brandie_assessment/apps/review/review_model.dart';
 import 'package:brandie_assessment/general/utils/storage_methods.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uuid/uuid.dart';
@@ -10,6 +10,7 @@ class FireStoreMethods {
 
   // upload post
   Future<String> uploadPost(
+    String productId,
     String description,
     File file,
     String uid,
@@ -23,6 +24,7 @@ class FireStoreMethods {
           .uploadImageToStorage('reviewImages', file, true);
       String postId = const Uuid().v1(); // creates unique id based on time
       Review post = Review(
+        productId: productId,
         description: description,
         uid: uid,
         username: username,
@@ -31,7 +33,12 @@ class FireStoreMethods {
         postUrl: photoUrl,
         profImage: profImage,
       );
-      _firestore.collection('reviews').doc(postId).set(post.toJson());
+      _firestore
+          .collection('reviews')
+          .doc(productId)
+          .collection('reviews')
+          .doc(postId)
+          .set(post.toJson());
       res = "success";
     } catch (err) {
       res = err.toString();

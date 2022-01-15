@@ -9,7 +9,7 @@ class LandingScreen extends StatelessWidget {
   LandingScreen({Key? key}) : super(key: key);
   final screens = [
     const HomeScreen(),
-    const FavouritesScreen(),
+    // const FavouritesScreen(),
     const ProfileScreen(),
   ];
 
@@ -39,11 +39,11 @@ class LandingScreen extends StatelessWidget {
                   activeIcon: Icon(Icons.home),
                   label: 'Home',
                 ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite_outline),
-                  activeIcon: Icon(Icons.favorite_rounded),
-                  label: 'Favourites',
-                ),
+                // BottomNavigationBarItem(
+                //   icon: Icon(Icons.favorite_outline),
+                //   activeIcon: Icon(Icons.favorite_rounded),
+                //   label: 'Favourites',
+                // ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person_outline),
                   activeIcon: Icon(Icons.person),

@@ -10,11 +10,18 @@ class GetProductProvider extends ChangeNotifier {
 
   dynamic _list = [];
 
+  bool isLoading = false;
+
   bool get getStatus => _status;
 
   String get getResponse => _response;
 
   final EndPoint _point = EndPoint();
+
+  void setloading(bool value) {
+    isLoading = value;
+    notifyListeners();
+  }
 
   void getProducts(bool isLocal) async {
     ValueNotifier<GraphQLClient> _client = _point.getClient();
@@ -26,6 +33,10 @@ class GetProductProvider extends ChangeNotifier {
       ),
     );
 
+    if (result.isLoading) {
+      setloading(true);
+    }
+
     if (result.hasException) {
       _status = false;
       if (result.exception!.graphqlErrors.isEmpty) {
@@ -35,6 +46,7 @@ class GetProductProvider extends ChangeNotifier {
       }
       notifyListeners();
     } else {
+      setloading(false);
       _status = false;
       _list = result.data;
       notifyListeners();
