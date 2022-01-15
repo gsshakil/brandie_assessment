@@ -1,4 +1,4 @@
-import 'package:brandie_assessment/apps/product/product_model.dart';
+import 'package:brandie_assessment/apps/product/model/product_model.dart';
 import 'package:brandie_assessment/apps/review/add_review_screen.dart';
 import 'package:brandie_assessment/apps/review/review_card.dart';
 import 'package:brandie_assessment/general/constants/route_constants.dart';

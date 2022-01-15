@@ -1,5 +1,5 @@
 import 'package:brandie_assessment/apps/home/home_banner_widget.dart';
-import 'package:brandie_assessment/apps/product/product_list.dart';
+import 'package:brandie_assessment/apps/product/widgets/product_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

@@ -1,5 +1,5 @@
-import 'package:brandie_assessment/apps/product/product_details_screen.dart';
-import 'package:brandie_assessment/apps/product/product_model.dart';
+import 'package:brandie_assessment/apps/product/screens/product_details_screen.dart';
+import 'package:brandie_assessment/apps/product/model/product_model.dart';
 import 'package:brandie_assessment/general/constants/route_constants.dart';
 import 'package:flutter/material.dart';
 

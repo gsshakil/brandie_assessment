@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.brandie_assessment">
    <application
-        android:label="brandie_assessment"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Brandy"
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

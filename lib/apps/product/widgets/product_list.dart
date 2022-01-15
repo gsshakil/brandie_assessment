@@ -1,6 +1,6 @@
 import 'package:brandie_assessment/apps/product/providers/get_product_provider.dart';
-import 'package:brandie_assessment/apps/product/product_card.dart';
-import 'package:brandie_assessment/apps/product/product_model.dart';
+import 'package:brandie_assessment/apps/product/widgets/product_card.dart';
+import 'package:brandie_assessment/apps/product/model/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
