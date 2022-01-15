@@ -1,9 +1,11 @@
 This is a sample application that displays a list of posts which people can share and earn points
 
-1. Implemnt Graphql APIs
+1. Implemnt Graphql APIs -- done
 2. Improve Landing Screen Bottom Navigation bar with stack route
 3. Add authentication and Profile
 4. Add Share and Favourite Section
 5. Improve UX Design
 6. Undestand the assessment requiremnt more and come up with cool solution
 7. Use sepration for Color, TextStyle, Media Query etc.
+8. Use pagination for Graphql
+9. Add comment section

@@ -1,6 +1,7 @@
 import 'package:brandie_assessment/apps/product/product_model.dart';
+import 'package:brandie_assessment/apps/product/share_button_group.dart';
+import 'package:brandie_assessment/general/constants/route_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:share/share.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({Key? key, required this.product})
@@ -13,62 +14,26 @@ class ProductDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(product.name ?? ''),
+        actions: [
+          IconButton(
+              onPressed: () {}, icon: Icon(Icons.favorite_outline_outlined)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.share)),
+        ],
       ),
       body: Card(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: 200,
                 child: Image.network(product.imageUrl ?? ''),
               ),
               Text(product.name ?? ''),
               const SizedBox(height: 20),
-              Text(product.description ?? ''),
               const SizedBox(height: 20),
-              Container(
-                decoration: const BoxDecoration(
-                  border: Border(
-                    top: BorderSide(
-                      color: Colors.grey,
-                    ),
-                    bottom: BorderSide(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: MaterialButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {},
-                        child: const Icon(Icons.favorite),
-                      ),
-                    ),
-                    Expanded(
-                      child: MaterialButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {},
-                        child: const Icon(Icons.comment),
-                      ),
-                    ),
-                    Expanded(
-                      child: MaterialButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          Share.share('text');
-                        },
-                        child: const Text('Share'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               const SizedBox(height: 40),
-              const Text('What people are saying about this product '),
+              const Text('Reviews'),
               Expanded(
                 child: ListView.builder(
                   itemCount: 10,
@@ -81,6 +46,15 @@ class ProductDetailsScreen extends StatelessWidget {
               )
             ],
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed(RouteConstants.addReviewRoute);
+        },
+        child: const Icon(
+          Icons.reviews,
+          color: Colors.white,
         ),
       ),
     );

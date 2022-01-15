@@ -1,6 +1,7 @@
 import 'package:brandie_assessment/apps/core/landing_screen.dart';
 import 'package:brandie_assessment/apps/core/splash_screen.dart';
 import 'package:brandie_assessment/apps/product/product_details_screen.dart';
+import 'package:brandie_assessment/apps/review/add_review_screen.dart';
 import 'package:brandie_assessment/general/constants/route_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,9 @@ class RouterGenerator {
             product: args.product,
           ),
         );
+
+      case RouteConstants.addReviewRoute:
+        return MaterialPageRoute(builder: (context) => const AddReviewScreen());
 
       default:
         return _errorRoute();
