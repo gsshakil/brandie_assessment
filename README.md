@@ -29,10 +29,10 @@ User can also like, comment and share other users reviews.
 There could be tranding/Editors choice sections where there will be curated list of recommanded contents for the specific user.
 
 ## Some study sketches
-![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/1.png)
-![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/2.png)
-![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/3.png)
-![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/4.png)
-![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/5.png)
+![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/1.jpg)
+![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/2.jpg)
+![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/3.jpg)
+![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/4.jpg)
+![alt text](https://github.com/gsshakil/brandie_assessment/blob/main/sketches/5.jpg)
 
 
